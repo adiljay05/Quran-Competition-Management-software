@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+
+<link href="quran1.css" rel="stylesheet">
+<link href="quran.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="./jquery-1.4.4.min.js.download"></script>
+    <link rel="stylesheet" href="./normalize.css">
+
+    <link rel="stylesheet" href="./result-light.css">
+
+  
+
+  <script>
+  function load_surah()
+  {
+		if(document.getElementById("surah").value<0 ||document.getElementById("surah").value>114)
+		{
+			alert("Please Enter a valid surah number");
+			return "Error";
+		}
+	var value1=document.getElementById("surah").value;
+	var value_string= value1.toString();
+	window.location.href = value_string+".html";
+  }
+  
+  </script>
+	<style>
+		
+	#surah
+	{
+	   border: 1px solid #CCCCCC;
+	   border-radius: 4px;
+	   background-color: #FFFFFF;
+	   background-image: none;
+	   color :#000000;
+	   font-family: Arial;
+	   font-weight: bold;
+	   font-size: 13px;
+	   line-height: 20px;
+	   padding: 4px 4px 4px 4px;
+	   margin: 0;
+	   text-align: center;
+	}
+	#surah:focus
+	{
+	   border-color: #66AFE9;
+	   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+	   outline: 0;
+	}
+  </style>
+  <!-- TODO: Missing CoffeeScript 2 -->
+	
+  <script src="quran.js"></script>
+</head>
+<body style="background:white;">
+<style id="compiled-css" type="text/css">
+      span.hl { background: yellow; }
+  </style>
+
+<div id="Html1" style="position:absolute;left:109px;top:86px;width:900px;height:600px;z-index:0; font-family:jawad; " align=center>
+	<input type="text" id="surah" placeholder="Enter surah number">
+	<input type="button" onclick="load_surah()" value="Select" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+</div>
+</body>
+</html>

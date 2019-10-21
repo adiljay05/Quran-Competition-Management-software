@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+
+<link href="quran1.css" rel="stylesheet">
+<link href="quran.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="./jquery-1.4.4.min.js.download"></script>
+    <link rel="stylesheet" href="./normalize.css">
+
+    <link rel="stylesheet" href="./result-light.css">
+
+  
+
+	
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+    $(window).load(function(){
+      
+//Wrap selected text in  tags with the class 'hl'
+//Take some action after (in this case, a simple alert)
+$("em").live("mouseup",
+    function() {
+        var selection = getSelectedText(); 
+        if(selection.length >= 10) {
+            console.log(selection);
+            
+            var replacement = $('<span></span>').attr({'Id':'hl'}).html(selection);
+            console.log(replacement);
+            
+            var replacementHtml = $('<div>').append(replacement.clone()).remove().html();
+            console.log(replacementHtml);
+
+            $(this).html( $(this).html().replace(selection, replacementHtml) );
+            //alert(selection);
+        }        
+    }
+); 
+
+//Grab selected text
+function getSelectedText(){ 
+    if(window.getSelection){ 
+        return window.getSelection().toString(); 
+    } 
+    else if(document.getSelection){ 
+        return document.getSelection(); 
+    } 
+    else if(document.selection){ 
+        return document.selection.createRange().text; 
+    } 
+} 
+
+
+    });
+
+</script>
+ <script>
+  function load()
+  {
+	//alert("function");
+	var start1=document.getElementById("start").value;
+	var end1=document.getElementById("end").value;
+	//alert(start1);
+	if(start1<=0 || end1>50)
+	{
+		alert("Please enter a correct value\n");
+		return "Error";
+	}
+	//alert(end1);
+	var i=1;
+	for(i=start1;i<=end1;i++)
+	{
+		var j=i.toString();
+		var ayat="a";
+		var final_id=ayat+j;
+		//alert(final_id);
+		document.getElementById(final_id).hidden=false;
+		document.getElementById("start").hidden=true;
+		document.getElementById("end").hidden=true;
+		document.getElementById("loader").hidden=true;
+	}
+	
+  }
+  
+  </script>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <style>
+	#start
+	{
+	   border: 1px solid #CCCCCC;
+	   border-radius: 4px;
+	   background-color: #FFFFFF;
+	   background-image: none;
+	   color :#000000;
+	   font-family: Arial;
+	   font-weight: bold;
+	   font-size: 13px;
+	   line-height: 20px;
+	   padding: 4px 4px 4px 4px;
+	   margin: 0;
+	   text-align: center;
+	}
+	#start:focus
+	{
+	   border-color: #66AFE9;
+	   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+	   outline: 0;
+	}
+	
+	#end
+	{
+	   border: 1px solid #CCCCCC;
+	   border-radius: 4px;
+	   background-color: #FFFFFF;
+	   background-image: none;
+	   color :#000000;
+	   font-family: Arial;
+	   font-weight: bold;
+	   font-size: 13px;
+	   line-height: 20px;
+	   padding: 4px 4px 4px 4px;
+	   margin: 0;
+	   text-align: center;
+	}
+	#end:focus
+	{
+	   border-color: #66AFE9;
+	   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+	   outline: 0;
+	}
+  </style>
+    <script>
+			function reset()
+			{
+				window.location.href = "main.html";
+			}
+  </script>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script src="quran.js"></script>
+<script>
+function printPage(id)
+{
+   window.print();
+}
+</script>
+  <script>
+@media print {
+body {
+   content:url(background.jpg);
+  }
+}
+</script>
+</head>
+<body style="background:white;">
+<style id="compiled-css" type="text/css">
+      span.hl { background: yellow; }
+  </style>
+
+<div id="Html1" style="position:absolute;left:109px;top:86px;width:900px;height:600px;z-index:0; font-family:Calibri;font-size:40px;" align=center>
+<input type="text" id="start" placeholder="starting value">&nbsp;&nbsp;&nbsp;
+<input type="text" id="end" placeholder="ending value">&nbsp;&nbsp;
+<input type="button" id="loader" onclick="load()" value="Load ayat" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+<input type="button" id="loader" onclick="reset()" value="Reset" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+<input type="submit" id="loader" onclick="printPage('body1')" name="Print" value="Print" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+<p id="a1" hidden >﻿وَالْمُرْسَلَاتِ عُرْفًا</p>
+<p style="background:#C4FFBF; " id="a2" hidden >فَالْعَاصِفَاتِ عَصْفًا</p>
+<p id="a3" hidden >وَالنَّاشِرَاتِ نَشْرًا</p>
+<p style="background:#C4FFBF; " id="a4" hidden >فَالْفَارِقَاتِ فَرْقًا</p>
+<p id="a5" hidden >فَالْمُلْقِيَاتِ ذِكْرًا</p>
+<p style="background:#C4FFBF; " id="a6" hidden >عُذْرًا أَوْ نُذْرًا</p>
+<p id="a7" hidden >إِنَّمَا تُوعَدُونَ لَوَاقِعٌ</p>
+<p style="background:#C4FFBF; " id="a8" hidden >فَإِذَا النُّجُومُ طُمِسَتْ</p>
+<p id="a9" hidden >وَإِذَا السَّمَاءُ فُرِجَتْ</p>
+<p style="background:#C4FFBF; " id="a10" hidden >وَإِذَا الْجِبَالُ نُسِفَتْ</p>
+<p id="a11" hidden >وَإِذَا الرُّسُلُ أُقِّتَتْ</p>
+<p style="background:#C4FFBF; " id="a12" hidden >لِأَيِّ يَوْمٍ أُجِّلَتْ</p>
+<p id="a13" hidden >لِيَوْمِ الْفَصْلِ</p>
+<p style="background:#C4FFBF; " id="a14" hidden >وَمَا أَدْرَاكَ مَا يَوْمُ الْفَصْلِ</p>
+<p id="a15" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p style="background:#C4FFBF; " id="a16" hidden >أَلَمْ نُهْلِكِ الْأَوَّلِينَ</p>
+<p id="a17" hidden >ثُمَّ نُتْبِعُهُمُ الْآخِرِينَ</p>
+<p style="background:#C4FFBF; " id="a18" hidden >كَذَلِكَ نَفْعَلُ بِالْمُجْرِمِينَ</p>
+<p id="a19" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p style="background:#C4FFBF; " id="a20" hidden >أَلَمْ نَخْلُقْكُمْ مِنْ مَاءٍ مَهِينٍ</p>
+<p id="a21" hidden >فَجَعَلْنَاهُ فِي قَرَارٍ مَكِينٍ</p>
+<p style="background:#C4FFBF; " id="a22" hidden >إِلَى قَدَرٍ مَعْلُومٍ</p>
+<p id="a23" hidden >فَقَدَرْنَا فَنِعْمَ الْقَادِرُونَ</p>
+<p style="background:#C4FFBF; " id="a24" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p id="a25" hidden >أَلَمْ نَجْعَلِ الْأَرْضَ كِفَاتًا</p>
+<p style="background:#C4FFBF; " id="a26" hidden >أَحْيَاءً وَأَمْوَاتًا</p>
+<p id="a27" hidden >وَجَعَلْنَا فِيهَا رَوَاسِيَ شَامِخَاتٍ وَأَسْقَيْنَاكُمْ مَاءً فُرَاتًا</p>
+<p style="background:#C4FFBF; " id="a28" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p id="a29" hidden >انْطَلِقُوا إِلَى مَا كُنْتُمْ بِهِ تُكَذِّبُونَ</p>
+<p style="background:#C4FFBF; " id="a30" hidden >انْطَلِقُوا إِلَى ظِلٍّ ذِي ثَلَاثِ شُعَبٍ</p>
+<p id="a31" hidden >لَا ظَلِيلٍ وَلَا يُغْنِي مِنَ اللَّهَبِ</p>
+<p style="background:#C4FFBF; " id="a32" hidden >إِنَّهَا تَرْمِي بِشَرَرٍ كَالْقَصْرِ</p>
+<p id="a33" hidden >كَأَنَّهُ جِمَالَتٌ صُفْرٌ</p>
+<p style="background:#C4FFBF; " id="a34" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p id="a35" hidden >هَذَا يَوْمُ لَا يَنْطِقُونَ</p>
+<p style="background:#C4FFBF; " id="a36" hidden >وَلَا يُؤْذَنُ لَهُمْ فَيَعْتَذِرُونَ</p>
+<p id="a37" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p style="background:#C4FFBF; " id="a38" hidden >هَذَا يَوْمُ الْفَصْلِ جَمَعْنَاكُمْ وَالْأَوَّلِينَ</p>
+<p id="a39" hidden >فَإِنْ كَانَ لَكُمْ كَيْدٌ فَكِيدُونِ</p>
+<p style="background:#C4FFBF; " id="a40" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p id="a41" hidden >إِنَّ الْمُتَّقِينَ فِي ظِلَالٍ وَعُيُونٍ</p>
+<p style="background:#C4FFBF; " id="a42" hidden >وَفَوَاكِهَ مِمَّا يَشْتَهُونَ</p>
+<p id="a43" hidden >كُلُوا وَاشْرَبُوا هَنِيئًا بِمَا كُنْتُمْ تَعْمَلُونَ</p>
+<p style="background:#C4FFBF; " id="a44" hidden >إِنَّا كَذَلِكَ نَجْزِي الْمُحْسِنِينَ</p>
+<p id="a45" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p style="background:#C4FFBF; " id="a46" hidden >كُلُوا وَتَمَتَّعُوا قَلِيلًا إِنَّكُمْ مُجْرِمُونَ</p>
+<p id="a47" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p style="background:#C4FFBF; " id="a48" hidden >وَإِذَا قِيلَ لَهُمُ ارْكَعُوا لَا يَرْكَعُونَ</p>
+<p id="a49" hidden >وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ</p>
+<p style="background:#C4FFBF; " id="a50" hidden >فَبِأَيِّ حَدِيثٍ بَعْدَهُ يُؤْمِنُونَ</p>
+</div>
+</body>
+</html>

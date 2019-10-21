@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+
+<link href="quran1.css" rel="stylesheet">
+<link href="quran.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="./jquery-1.4.4.min.js.download"></script>
+    <link rel="stylesheet" href="./normalize.css">
+
+    <link rel="stylesheet" href="./result-light.css">
+
+  
+
+	
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+    $(window).load(function(){
+      
+//Wrap selected text in  tags with the class 'hl'
+//Take some action after (in this case, a simple alert)
+$("em").live("mouseup",
+    function() {
+        var selection = getSelectedText(); 
+        if(selection.length >= 10) {
+            console.log(selection);
+            
+            var replacement = $('<span></span>').attr({'Id':'hl'}).html(selection);
+            console.log(replacement);
+            
+            var replacementHtml = $('<div>').append(replacement.clone()).remove().html();
+            console.log(replacementHtml);
+
+            $(this).html( $(this).html().replace(selection, replacementHtml) );
+            //alert(selection);
+        }        
+    }
+); 
+
+//Grab selected text
+function getSelectedText(){ 
+    if(window.getSelection){ 
+        return window.getSelection().toString(); 
+    } 
+    else if(document.getSelection){ 
+        return document.getSelection(); 
+    } 
+    else if(document.selection){ 
+        return document.selection.createRange().text; 
+    } 
+} 
+
+
+    });
+
+</script>
+ <script>
+  function load()
+  {
+	//alert("function");
+	var start1=document.getElementById("start").value;
+	var end1=document.getElementById("end").value;
+	//alert(start1);
+	if(start1<=0 || end1>42)
+	{
+		alert("Please enter a correct value\n");
+		return "Error";
+	}
+	//alert(end1);
+	var i=1;
+	for(i=start1;i<=end1;i++)
+	{
+		var j=i.toString();
+		var ayat="a";
+		var final_id=ayat+j;
+		//alert(final_id);
+		document.getElementById(final_id).hidden=false;
+		document.getElementById("start").hidden=true;
+		document.getElementById("end").hidden=true;
+		document.getElementById("loader").hidden=true;
+	}
+	
+  }
+  
+  </script>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <style>
+	#start
+	{
+	   border: 1px solid #CCCCCC;
+	   border-radius: 4px;
+	   background-color: #FFFFFF;
+	   background-image: none;
+	   color :#000000;
+	   font-family: Arial;
+	   font-weight: bold;
+	   font-size: 13px;
+	   line-height: 20px;
+	   padding: 4px 4px 4px 4px;
+	   margin: 0;
+	   text-align: center;
+	}
+	#start:focus
+	{
+	   border-color: #66AFE9;
+	   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+	   outline: 0;
+	}
+	
+	#end
+	{
+	   border: 1px solid #CCCCCC;
+	   border-radius: 4px;
+	   background-color: #FFFFFF;
+	   background-image: none;
+	   color :#000000;
+	   font-family: Arial;
+	   font-weight: bold;
+	   font-size: 13px;
+	   line-height: 20px;
+	   padding: 4px 4px 4px 4px;
+	   margin: 0;
+	   text-align: center;
+	}
+	#end:focus
+	{
+	   border-color: #66AFE9;
+	   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+	   outline: 0;
+	}
+  </style>
+    <script>
+			function reset()
+			{
+				window.location.href = "main.html";
+			}
+  </script>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script src="quran.js"></script>
+<script>
+function printPage(id)
+{
+   window.print();
+}
+</script>
+  <script>
+@media print {
+body {
+   content:url(background.jpg);
+  }
+}
+</script>
+</head>
+<body style="background:white;">
+<style id="compiled-css" type="text/css">
+      span.hl { background: yellow; }
+  </style>
+
+<div id="Html1" style="position:absolute;left:109px;top:86px;width:900px;height:600px;z-index:0; font-family:Calibri;font-size:40px;" align=center>
+<input type="text" id="start" placeholder="starting value">&nbsp;&nbsp;&nbsp;
+<input type="text" id="end" placeholder="ending value">&nbsp;&nbsp;
+<input type="button" id="loader" onclick="load()" value="Load ayat" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+<input type="button" id="loader" onclick="reset()" value="Reset" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+<input type="submit" id="loader" onclick="printPage('body1')" name="Print" value="Print" style="width:96px;height:25px;z-index:1; border: 1px solid #2E6DA4;   border-radius: 4px; background-color: #3370B7; color: #FFFFFF; font-family: Arial; font-weight: normal; font-size: 13px; margin: 0;">
+<p id="a1" hidden >﻿عَبَسَ وَتَوَلَّى</p>
+<p style="background:#C4FFBF; " id="a2" hidden >أَنْ جَاءَهُ الْأَعْمَى</p>
+<p id="a3" hidden >وَمَا يُدْرِيكَ لَعَلَّهُ يَزَّكَّى</p>
+<p style="background:#C4FFBF; " id="a4" hidden >أَوْ يَذَّكَّرُ فَتَنْفَعَهُ الذِّكْرَى</p>
+<p id="a5" hidden >أَمَّا مَنِ اسْتَغْنَى</p>
+<p style="background:#C4FFBF; " id="a6" hidden >فَأَنْتَ لَهُ تَصَدَّى</p>
+<p id="a7" hidden >وَمَا عَلَيْكَ أَلَّا يَزَّكَّى</p>
+<p style="background:#C4FFBF; " id="a8" hidden >وَأَمَّا مَنْ جَاءَكَ يَسْعَى</p>
+<p id="a9" hidden >وَهُوَ يَخْشَى</p>
+<p style="background:#C4FFBF; " id="a10" hidden >فَأَنْتَ عَنْهُ تَلَهَّى</p>
+<p id="a11" hidden >كَلَّا إِنَّهَا تَذْكِرَةٌ</p>
+<p style="background:#C4FFBF; " id="a12" hidden >فَمَنْ شَاءَ ذَكَرَهُ</p>
+<p id="a13" hidden >فِي صُحُفٍ مُكَرَّمَةٍ</p>
+<p style="background:#C4FFBF; " id="a14" hidden >مَرْفُوعَةٍ مُطَهَّرَةٍ</p>
+<p id="a15" hidden >بِأَيْدِي سَفَرَةٍ</p>
+<p style="background:#C4FFBF; " id="a16" hidden >كِرَامٍ بَرَرَةٍ</p>
+<p id="a17" hidden >قُتِلَ الْإِنْسَانُ مَا أَكْفَرَهُ</p>
+<p style="background:#C4FFBF; " id="a18" hidden >مِنْ أَيِّ شَيْءٍ خَلَقَهُ</p>
+<p id="a19" hidden >مِنْ نُطْفَةٍ خَلَقَهُ فَقَدَّرَهُ</p>
+<p style="background:#C4FFBF; " id="a20" hidden >ثُمَّ السَّبِيلَ يَسَّرَهُ</p>
+<p id="a21" hidden >ثُمَّ أَمَاتَهُ فَأَقْبَرَهُ</p>
+<p style="background:#C4FFBF; " id="a22" hidden >ثُمَّ إِذَا شَاءَ أَنْشَرَهُ</p>
+<p id="a23" hidden >كَلَّا لَمَّا يَقْضِ مَا أَمَرَهُ</p>
+<p style="background:#C4FFBF; " id="a24" hidden >فَلْيَنْظُرِ الْإِنْسَانُ إِلَى طَعَامِهِ</p>
+<p id="a25" hidden >أَنَّا صَبَبْنَا الْمَاءَ صَبًّا</p>
+<p style="background:#C4FFBF; " id="a26" hidden >ثُمَّ شَقَقْنَا الْأَرْضَ شَقًّا</p>
+<p id="a27" hidden >فَأَنْبَتْنَا فِيهَا حَبًّا</p>
+<p style="background:#C4FFBF; " id="a28" hidden >وَعِنَبًا وَقَضْبًا</p>
+<p id="a29" hidden >وَزَيْتُونًا وَنَخْلًا</p>
+<p style="background:#C4FFBF; " id="a30" hidden >وَحَدَائِقَ غُلْبًا</p>
+<p id="a31" hidden >وَفَاكِهَةً وَأَبًّا</p>
+<p style="background:#C4FFBF; " id="a32" hidden >مَتَاعًا لَكُمْ وَلِأَنْعَامِكُمْ</p>
+<p id="a33" hidden >فَإِذَا جَاءَتِ الصَّاخَّةُ</p>
+<p style="background:#C4FFBF; " id="a34" hidden >يَوْمَ يَفِرُّ الْمَرْءُ مِنْ أَخِيهِ</p>
+<p id="a35" hidden >وَأُمِّهِ وَأَبِيهِ</p>
+<p style="background:#C4FFBF; " id="a36" hidden >وَصَاحِبَتِهِ وَبَنِيهِ</p>
+<p id="a37" hidden >لِكُلِّ امْرِئٍ مِنْهُمْ يَوْمَئِذٍ شَأْنٌ يُغْنِيهِ</p>
+<p style="background:#C4FFBF; " id="a38" hidden >وُجُوهٌ يَوْمَئِذٍ مُسْفِرَةٌ</p>
+<p id="a39" hidden >ضَاحِكَةٌ مُسْتَبْشِرَةٌ</p>
+<p style="background:#C4FFBF; " id="a40" hidden >وَوُجُوهٌ يَوْمَئِذٍ عَلَيْهَا غَبَرَةٌ</p>
+<p id="a41" hidden >تَرْهَقُهَا قَتَرَةٌ</p>
+<p style="background:#C4FFBF; " id="a42" hidden >أُولَئِكَ هُمُ الْكَفَرَةُ الْفَجَرَةُ</p>
+</div>
+</body>
+</html>

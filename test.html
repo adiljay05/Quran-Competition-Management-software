@@ -1,0 +1,47 @@
+<html>
+<head>
+<script>
+function toggleFullScreen() {
+	
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+  window.location = "index.html";
+}
+
+</script>
+
+		<link href="styling.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="styleShow.css">
+		<link rel="stylesheet" href="index.css">
+
+</head>
+
+
+<body background="quran.jpg" align=center style="background-attachment:fixed;">
+<div style="margin-top:20%;margin-left:24%;margin-bottom:0%; font-family:calibri; background:white; width:50%; border-radius:10px; opacity: 0.5;" align=center>
+<img src="./logo.png">
+<font size=20px color=Green><p>Welcome to School_Name Quran Competition</p></font>
+</div>
+<input type="button" id="Button8" value="Start" style="margin-top:3%; width:20%;height:7%;" onclick="toggleFullScreen()">
+
+</body>
+
+
+
+</html>
